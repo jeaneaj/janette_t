@@ -1,0 +1,6 @@
+<widget>
+  <widgetClass>tooltwist.janette.widgets.LinkWidget</widgetClass>
+  <idWithinRootWidget>0</idWithinRootWidget>
+  <label>link widget</label>
+  <description>link widget</description>
+</widget>
