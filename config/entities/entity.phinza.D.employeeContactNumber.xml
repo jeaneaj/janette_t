@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<entity>
+    <tableName>employeeContactNumber</tableName>
+    <longName>employeecontactnumber</longName>
+    <attribute>
+        <name>employeeId</name>
+        <sequence>1</sequence>
+        <columnLength>50</columnLength>
+        <fieldLength>20</fieldLength>
+        <typeScopeType>P</typeScopeType>
+        <typeAttribute>VARCHAR</typeAttribute>
+    </attribute>
+    <attribute>
+        <name>id</name>
+        <sequence>0</sequence>
+        <uniqueKey>Y</uniqueKey>
+        <primaryKey>Y</primaryKey>
+        <typeScopeType>P</typeScopeType>
+        <typeAttribute>IDENTITY</typeAttribute>
+    </attribute>
+    <attribute>
+        <name>number</name>
+        <sequence>3</sequence>
+        <columnLength>20</columnLength>
+        <typeScopeType>P</typeScopeType>
+        <typeAttribute>INTEGER</typeAttribute>
+    </attribute>
+    <attribute>
+        <name>type</name>
+        <sequence>2</sequence>
+        <columnLength>20</columnLength>
+        <typeScopeType>P</typeScopeType>
+        <typeAttribute>VARCHAR</typeAttribute>
+    </attribute>
+</entity>

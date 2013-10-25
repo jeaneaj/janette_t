@@ -1,0 +1,4 @@
+<requestHandler>
+	<class>tooltwist.janette.requestHandlers.MaintainEmployeeRequestHandler</class>
+	<description>Maintain Employee Data</description>
+</requestHandler>
