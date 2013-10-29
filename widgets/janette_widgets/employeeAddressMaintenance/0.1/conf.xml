@@ -1,0 +1,6 @@
+<widget>
+  <widgetClass>tooltwist.janette.widgets.EmployeeAddressMaintenanceWidget</widgetClass>
+  <idWithinRootWidget>0</idWithinRootWidget>
+  <label>Employee Address Maintenance</label>
+  <description>Employee Address Maintenance</description>
+</widget>

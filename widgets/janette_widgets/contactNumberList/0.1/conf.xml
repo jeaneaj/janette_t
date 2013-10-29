@@ -1,0 +1,6 @@
+<widget>
+  <widgetClass>tooltwist.janette.widgets.ContactNumberListWidget</widgetClass>
+  <idWithinRootWidget>0</idWithinRootWidget>
+  <label>Contact Number List</label>
+  <description>Contact Number List</description>
+</widget>

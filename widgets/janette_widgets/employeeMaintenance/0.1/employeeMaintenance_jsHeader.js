@@ -4,8 +4,9 @@ var EmployeeMaintenance = function() {
 		myVariable: null,
 
 		init: function() {
-			alert("EmployeeMaintenance.init()");
-
+		//	alert("EmployeeMaintenance.init()");
+			
+			
 	
 	
 	$("#button-save").click(function() {
@@ -19,24 +20,36 @@ var EmployeeMaintenance = function() {
 				employeeId: id,
 				employeeName: name,
 				employeeAge: age,
+				subop: "update",
 				op: "janette_widgets.employeeMaintenance.maintainEmployee"
 			},
 			success: function(data) {
 				alert(data);
-				if(data == "Update") {
-					alert("Employee data successfully updated");
-					
-				}
-				else {
-					alert("Employee data successfully inserted");
-				}
+				
+
 			}
 		});
 	 
 		
 	});
 	
-
+	//delete employee
+	$("#button-delete").click(function() {
+		var employeeId=		$("#employeeId").val();
+	  
+		$.ajax({
+			data: {
+				empId: employeeId,
+				subop: "delete",	
+				op: "janette_widgets.employeeMaintenance.maintainEmployee"
+			},
+			success: function(data) {
+				alert(data);
+			   window.location.href = $("#link-employeeList").attr("href");
+			}
+		});
+	
+	});
 		},
 		
 		myMethod: function() {

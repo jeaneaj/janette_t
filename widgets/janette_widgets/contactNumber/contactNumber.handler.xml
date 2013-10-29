@@ -1,0 +1,4 @@
+<requestHandler>
+	<class>tooltwist.janette.requestHandlers.ContactNumberRequestHandler</class>
+	<description>Contact Number</description>
+</requestHandler>

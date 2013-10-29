@@ -53,12 +53,13 @@
  <tr>
  <td>
  <input type="button" id="button-save" value="Save" />
+ <input type="button" id="button-delete" value="Delete" />
  
  </td>
  </tr>
 </table>
 </form>
-<a href="%%employeeList%%">back to list</a>
+<a href="%%employeeList%%" id = "link-employeeList">back to list</a>
 
 <!--END-->
 </body>

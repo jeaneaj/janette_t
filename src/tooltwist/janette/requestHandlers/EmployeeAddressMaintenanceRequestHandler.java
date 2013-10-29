@@ -12,12 +12,12 @@ import com.dinaa.xpc.XpcException;
 import tooltwist.wbd.WbdRequestHandler;
 
 /**
- * Request handler "maintainEmployee" - Maintain Employee Data
+ * Request handler "employeeAddressMaintenance" - Employee Address Maintenance
  * 
  * This handler can be called from a client browser before control is passed to a normal
  * navpoint. To call it, add this parameter to a normal ToolTwist URL:
  * 
- *         op=janette_widgets.employeeMaintenance.maintainEmployee
+ *         op=janette_widgets.employeeAddressMaintenance.employeeAddressMaintenance
  * 
  * After this method is called, the requested navpoint will be displayed in the usual
  * manner. To pass control to a different navpoint, use RoutingUIM.gotoNavpoint(), and
@@ -25,37 +25,47 @@ import tooltwist.wbd.WbdRequestHandler;
  *
  * @author ?
  */
-public class MaintainEmployeeRequestHandler extends WbdRequestHandler
+public class EmployeeAddressMaintenanceRequestHandler extends WbdRequestHandler
 {
 
 	@Override
 	public boolean handler(UimHelper uh, String widgetId, String method) throws ServletException, IOException, DinaaException
 	{
-		String subop = uh.getRequestValue("subop");
+
+
+String subop = uh.getRequestValue("subop");
 		
 		if(subop != null && subop.equalsIgnoreCase("update")) {
-			String employeeId = uh.getRequestValue("employeeId");
-			String employeeName = uh.getRequestValue("employeeName");
-			String employeeAge = uh.getRequestValue("employeeAge");
+		
+			String id = uh.getRequestValue("id");
+			String street = uh.getRequestValue("street");
+			String town = uh.getRequestValue("town");
+			String city = uh.getRequestValue("city");
+			String country = uh.getRequestValue("country");
 			
-			if (employeeId != null && !employeeId.equals("")) {
+			if (id != null && !id.equals("")) {
 				//update employee data
 				Xpc xpc = uh.getXpc();
-				xpc.start("phinza.D.employee", "update");
-				xpc.attrib("id", employeeId);
-				xpc.attrib("employeeName", employeeName);
-				xpc.attrib("age", employeeAge);
+				xpc.start("phinza.D.employeeAddress", "update");
+				xpc.attrib("id", id);
+				xpc.attrib("street", street);
+				xpc.attrib("town", town);
+				xpc.attrib("city", city);
+				xpc.attrib("country", country);
 				xpc.run();
-				uh.reply("Employee record successfully updated");
+				uh.reply("Employee  address record successfully updated");
 			}
 			
 			
 			else {
 				//insert employee data
 				Xpc xpc = uh.getXpc();
-				xpc.start("phinza.D.employee", "insert");
-				xpc.attrib("employeeName", employeeName);
-				xpc.attrib("age", employeeAge);
+				xpc.start("phinza.D.employeeAddress", "insert");
+				xpc.attrib("id", id);
+				xpc.attrib("street", street);
+				xpc.attrib("town", town);
+				xpc.attrib("city", city);
+				xpc.attrib("country", country);
 				xpc.run();
 				uh.reply("Employee record successfully inserted");
 			}
@@ -64,12 +74,12 @@ public class MaintainEmployeeRequestHandler extends WbdRequestHandler
 			
 		}
 		else if(subop != null && subop.equalsIgnoreCase("delete")) {
-			String employeeId = uh.getRequestValue("employeeId");
+			String id = uh.getRequestValue("id");
 			
 			//delete employee data
 			Xpc xpc = uh.getXpc();
-			xpc.start("phinza.D.employee", "delete");
-			xpc.attrib("id", employeeId);
+			xpc.start("phinza.D.employeeAddress	", "delete");
+			xpc.attrib("id", id);
 			xpc.run();
 			uh.reply("Employee record successfully deleted");
 		}
